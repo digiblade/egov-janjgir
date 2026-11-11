@@ -49,7 +49,8 @@ class HomeController extends Controller
                 ->publiclyVisible()
                 ->with('featuredImage')
                 ->orderByDesc('published_at')
-                ->limit(3)
+                ->orderByDesc('id')
+                ->limit(4)
                 ->get(),
             'updates' => $updatesFeed->latest($updateSources),
             'quickLinks' => QuickLink::query()

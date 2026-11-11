@@ -210,8 +210,12 @@
                             <h2 id="announcements-heading">{{ $announcementSection?->localized('title') ?: __('ui.site.announcements') }}</h2>
                             @if ($announcementSection?->localized('description'))<p class="section-heading__description">{{ $announcementSection->localized('description') }}</p>@endif
                         </div>
+                        @if ($announcements->count() > 3)
+                            <a class="text-link" href="{{ route('announcements.index') }}">{{ __('ui.actions.view_all') }}<span aria-hidden="true">→</span></a>
+                        @endif
                     </div>
-                    @forelse ($announcements as $announcement)
+                    <div class="announcement-list{{ $announcements->contains(fn ($item) => $item->featuredImage?->visibility === 'public') ? ' announcement-list--grid' : '' }}">
+                    @forelse ($announcements->take(3) as $announcement)
                         <article class="announcement-item">
                             <time datetime="{{ $announcement->published_at?->toDateString() }}">{{ $announcement->published_at?->locale(app()->getLocale())->translatedFormat('d M Y') }}</time>
                             <h3><a class="content-title-link" href="{{ route('announcements.show', $announcement) }}">{{ $announcement->localized('title') ?: __('ui.site.empty_content') }}</a></h3>
@@ -225,6 +229,7 @@
                     @empty
                         <p class="empty-state">{{ __('ui.site.no_announcements') }}</p>
                     @endforelse
+                    </div>
                 </section>
             @endif
         </div>

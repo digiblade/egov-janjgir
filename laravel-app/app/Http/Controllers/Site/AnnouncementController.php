@@ -27,6 +27,7 @@ class AnnouncementController extends Controller
                 });
             })
             ->orderByDesc('published_at')
+            ->orderByDesc('id')
             ->paginate(12)
             ->withQueryString();
 
