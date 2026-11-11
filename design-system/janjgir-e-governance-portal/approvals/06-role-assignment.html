@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102d55">
+    <title>Role assignment — approval preview</title>
+    <link rel="stylesheet" href="approval.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="approval-bar"><p>Design approval preview · Staff role assignment</p><p class="locale-demo">English · हिन्दी preview available in application</p></div>
+    <header class="admin-topbar">
+        <div class="admin-actions"><span class="brand-mark" aria-hidden="true">J</span><span><strong>Janjgir e-Governance</strong><br><small>Staff workspace</small></span></div>
+        <div class="admin-actions"><span>Signed in as <strong>R. Verma</strong></span> <a href="#sign-out">Sign out</a></div>
+    </header>
+    <div class="admin-layout">
+        <aside class="admin-side" aria-label="Admin navigation">
+            <nav>
+                <a href="#dashboard">Dashboard</a><a href="#homepage">Homepage</a><a href="#documents">Documents</a><a href="#training">Training</a><a href="#team">Team</a><a href="#reports">Reports</a><a href="#gallery">Gallery</a><a href="#support">Support</a><a href="#users" aria-current="page">Users</a><a href="#roles">Roles and permissions</a><a href="#settings">Settings</a>
+            </nav>
+        </aside>
+        <main id="main" class="admin-main">
+            <div class="page-head">
+                <p class="eyebrow">Users / Edit staff account</p>
+                <h1>Edit staff account</h1>
+                <p class="muted">Assign roles for shared responsibilities, then add direct feature permissions for this staff member when needed.</p>
+            </div>
+            <form action="#save-preview" method="post">
+                <div class="grid grid-2">
+                    <section class="card" aria-labelledby="staff-account-title">
+                        <h2 id="staff-account-title">Staff account</h2>
+                        <p class="note">Profile and account state</p>
+                        <div class="field"><label for="staff-name">Full name</label><input id="staff-name" name="name" value="Anita Sharma" autocomplete="name"></div>
+                        <div class="field"><label for="staff-email">Work email</label><input id="staff-email" name="email" type="email" value="anita.sharma@example.gov.in" autocomplete="email"></div>
+                        <div class="grid">
+                            <p class="note"><strong>Account:</strong> Active</p>
+                            <p class="note"><strong>Last sign-in:</strong> 27 Oct 2026, 10:42</p>
+                            <p class="note"><strong>Sign-in step:</strong> Password change required</p>
+                        </div>
+                        <div class="approval-note" role="note"><strong>Super Admin access is protected.</strong> This form cannot grant Super Admin. The initial Super Admin is created through one-time setup.</div>
+                    </section>
+                    <section class="card" aria-labelledby="access-title">
+                        <h2 id="access-title">Access and responsibilities</h2>
+                        <p class="note">Role changes and direct permissions are enforced on every server request.</p>
+                        <div role="group" aria-labelledby="roles-title">
+                            <h3 id="roles-title">Roles</h3>
+                            <div class="check-grid">
+                                <label class="check-row"><input type="checkbox" name="roles[]" value="admin" checked><span><strong>Admin</strong><small>Manage assigned public content and staff workflows</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="roles[]" value="content-editor"><span><strong>Content Editor</strong><small>Create and edit content; publishing is a separate permission</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="roles[]" value="support-agent"><span><strong>Support Agent</strong><small>Review and update assigned support requests</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="roles[]" value="viewer"><span><strong>Viewer</strong><small>Read authorized admin records</small></span></label>
+                            </div>
+                        </div>
+                        <div role="group" aria-labelledby="homepage-permissions-title">
+                            <h3 id="homepage-permissions-title">Homepage</h3>
+                            <div class="check-grid">
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="homepage.view" checked><span>View homepage content <small>homepage.view</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="homepage.edit" checked><span>Edit department information <small>homepage.edit</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="homepage.publish"><span>Publish homepage updates <small>homepage.publish</small></span></label>
+                            </div>
+                        </div>
+                        <div role="group" aria-labelledby="documents-permissions-title">
+                            <h3 id="documents-permissions-title">Documents</h3>
+                            <div class="check-grid">
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="documents.view" checked><span>View documents <small>documents.view</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="documents.create" checked><span>Create document drafts <small>documents.create</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="documents.edit" checked><span>Edit document details <small>documents.edit</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="documents.upload" checked><span>Attach documents <small>documents.upload</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="documents.publish"><span>Publish documents <small>documents.publish</small></span></label>
+                            </div>
+                        </div>
+                        <div role="group" aria-labelledby="support-permissions-title">
+                            <h3 id="support-permissions-title">Support</h3>
+                            <div class="check-grid">
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="support.view" checked><span>View support queue <small>support.view</small></span></label>
+                                <label class="check-row"><input type="checkbox" name="permissions[]" value="support.assign"><span>Assign requests <small>support.assign</small></span></label>
+                            </div>
+                        </div>
+                        <div class="admin-actions"><a class="button button-secondary" href="#cancel">Cancel</a><button class="button" type="submit">Save permissions</button></div>
+                    </section>
+                </div>
+            </form>
+            <p class="approval-note"><strong>Static approval preview.</strong> Names, roles and selections are illustrative. This file has no runtime dependency; the Laravel user form loads the current role and permission catalog and retains the same protected-account rules.</p>
+        </main>
+    </div>
+</body>
+</html>

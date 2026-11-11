@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document management · Admin CRUD approval preview</title>
+    <link rel="stylesheet" href="approval.css">
+</head>
+<body>
+    <a class="skip-link" href="#admin-main">Skip to document management</a>
+    <header class="admin-topbar"><strong>Janjgir Portal · Staff workspace</strong><div class="admin-actions"><span>R. Patel · Administrator</span><button class="button button-secondary" type="button">Sign out</button></div></header>
+    <div class="admin-layout">
+        <nav class="admin-side" aria-label="Staff navigation"><a href="04-admin-dashboard.html">Dashboard</a><a href="#homepage">Homepage</a><a href="#documents" aria-current="page">Documents</a><a href="#training">Training</a><a href="#reports">Reports</a><a href="#team">Team and gallery</a><a href="#support">Support requests</a><a href="#users">Users and roles</a></nav>
+        <main id="admin-main" class="admin-main">
+            <header class="page-head"><p class="eyebrow">Resource management</p><h1>Documents</h1><p class="muted">Review publication state, versions, category and file actions.</p><div class="admin-actions"><a class="button" href="#create-document">Add document record</a><a class="button button-secondary" href="#categories">Manage categories</a></div></header>
+            <section class="card" aria-labelledby="bulk-heading"><div class="section-title"><h2 id="bulk-heading">Bulk upload documents</h2><span class="badge">Creates drafts</span></div><p class="note">Select up to 10 supported files in one batch. Each file remains private and creates an editable draft in the selected category. Complete Hindi and English metadata, publish each file in Media, then publish each document record.</p>
+                <form class="grid grid-3" aria-label="Create document drafts from files"><div><label for="draft-category">Active category</label><select id="draft-category"><option>Citizen forms</option><option>Orders and circulars</option><option>Guidelines</option></select></div><div><label for="draft-files">Document files</label><input id="draft-files" type="file" multiple aria-describedby="draft-help"><p class="small" id="draft-help">PDF, DOC, DOCX, XLS, XLSX, PPT or PPTX · up to configured server limit per file</p></div><div class="admin-actions" style="align-items:end"><button type="button" class="button">Upload privately and create drafts</button></div></form>
+            </section>
+            <div class="admin-toolbar"><form class="filters" aria-label="Filter document records"><div class="search-wide"><label for="doc-q">Search</label><input id="doc-q" type="search" placeholder="Title or reference number"></div><div><label for="doc-status">Status</label><select id="doc-status"><option>All statuses</option><option>Draft</option><option>Published</option><option>Scheduled</option><option>Archived</option></select></div><div><label for="doc-category">Category</label><select id="doc-category"><option>All categories</option><option>Citizen forms</option></select></div><button type="button" class="button button-secondary">Apply</button></form><button class="button button-secondary" type="button">Save order</button></div>
+            <div class="table-wrap"><table><caption class="sr-only">Document records, publication state and editing actions</caption><thead><tr><th scope="col">Document</th><th scope="col">Category</th><th scope="col">Version</th><th scope="col">Status</th><th scope="col">Last updated</th><th scope="col">Actions</th></tr></thead><tbody>
+                <tr><td><span aria-label="Reorder row" title="Drag or use arrow buttons">⠿ <button type="button" aria-label="Move Citizen service directory up">↑</button><button type="button" aria-label="Move Citizen service directory down">↓</button></span><strong>Citizen service directory</strong><small>citizen-service-directory · JJP/2026/184</small></td><td>Guidelines</td><td>2.0</td><td><span class="status status-published">Published</span></td><td>18 Oct 2026</td><td><a href="#edit-1">Edit</a></td></tr>
+                <tr><td><span aria-label="Reorder row" title="Drag or use arrow buttons">⠿ <button type="button" aria-label="Move Application form draft up">↑</button><button type="button" aria-label="Move Application form draft down">↓</button></span><strong>Application form - application-form.pdf</strong><small>Filename is a temporary title; complete both languages.</small></td><td>Citizen forms</td><td>1.0</td><td><span class="status status-pending">Draft · private file</span></td><td>18 Oct 2026</td><td><a href="#edit-2">Edit draft</a></td></tr>
+                <tr><td><span aria-label="Reorder row" title="Drag or use arrow buttons">⠿ <button type="button" aria-label="Move Service camp schedule up">↑</button><button type="button" aria-label="Move Service camp schedule down">↓</button></span><strong>Service camp schedule</strong><small>JJP/2026/171</small></td><td>Orders and circulars</td><td>1.0</td><td><span class="status">Scheduled</span></td><td>15 Oct 2026</td><td><a href="#edit-3">Edit</a></td></tr>
+            </tbody></table></div>
+            <nav class="pagination" aria-label="Document management pages"><a href="#page-1" aria-current="page">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#next" aria-label="Next page">›</a></nav>
+            <aside class="approval-note"><strong>Interaction and security notes:</strong> Reordering is permission-checked and persisted server-side. Bulk files start private; document publication requires an explicit file-publication step. Delete operations require confirmation.</aside>
+        </main>
+    </div>
+</body>
+</html>

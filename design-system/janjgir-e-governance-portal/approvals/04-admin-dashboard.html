@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Staff dashboard · Approval preview</title>
+    <link rel="stylesheet" href="approval.css">
+</head>
+<body>
+    <a class="skip-link" href="#dashboard-main">Skip to dashboard</a>
+    <header class="admin-topbar"><strong>Janjgir Portal · Staff workspace</strong><div class="admin-actions"><span>R. Patel · Administrator</span><button class="button button-secondary" type="button">Sign out</button></div></header>
+    <div class="admin-layout">
+        <nav class="admin-side" aria-label="Staff navigation"><a href="#dashboard-main" aria-current="page">Dashboard</a><a href="#home-content">Homepage content</a><a href="#documents">Documents</a><a href="#training">Training</a><a href="#reports">Reports</a><a href="#team">Team and gallery</a><a href="#support">Support requests</a><a href="#users">Users and roles</a><a href="#settings">Settings</a></nav>
+        <main id="dashboard-main" class="admin-main">
+            <header class="page-head"><p class="eyebrow">Staff overview</p><h1>Dashboard</h1><p class="muted">Counts and actions are limited to modules you are allowed to manage.</p></header>
+            <section aria-labelledby="module-counts"><div class="section-title"><h2 id="module-counts">Your content</h2><a href="#content">View all</a></div><div class="grid grid-4"><article class="card metric"><strong>42</strong><span>Documents</span><a href="#documents">Manage</a></article><article class="card metric"><strong>18</strong><span>Notices</span><a href="#notices">Manage</a></article><article class="card metric"><strong>11</strong><span>Training resources</span><a href="#training">Manage</a></article><article class="card metric"><strong>09</strong><span>Reports</span><a href="#reports">Manage</a></article></div></section>
+            <section class="grid grid-2" style="margin-top:1rem" aria-label="Publication and support status">
+                <article class="card"><div class="section-title"><h2>Publication status</h2><a href="#drafts">Review drafts</a></div><div class="table-wrap"><table><caption class="sr-only">Content counts by publication state</caption><thead><tr><th>Module</th><th>Draft</th><th>Published</th><th>Scheduled</th></tr></thead><tbody><tr><th scope="row">Documents</th><td>06</td><td>31</td><td>02</td></tr><tr><th scope="row">Notices</th><td>03</td><td>12</td><td>01</td></tr><tr><th scope="row">Reports</th><td>02</td><td>07</td><td>00</td></tr></tbody></table></div></article>
+                <article class="card" id="support"><div class="section-title"><h2>Support queue</h2><span class="badge">4 pending</span></div><p>Requests awaiting triage or a staff response.</p><a class="button" href="#support-queue">Open support inbox</a><p class="note">Assigned requests are shown according to your support access.</p></article>
+            </section>
+            <section class="grid grid-2" style="margin-top:1rem" aria-label="Recent uploads and activity">
+                <article class="card"><div class="section-title"><h2>Recent uploads</h2><a href="#media">Media library</a></div><div class="activity-row"><strong>service-directory-v2.pdf</strong><div class="small">R. Patel · Private · 18 Oct 2026</div></div><div class="activity-row"><strong>district-map.webp</strong><div class="small">A. Singh · Public · 17 Oct 2026</div></div></article>
+                <article class="card"><div class="section-title"><h2>Recent activity</h2><a href="#audit">Audit log</a></div><div class="activity-row"><strong>Document draft created</strong><div class="small">R. Patel · 18 Oct 2026 · Metadata change recorded</div></div><div class="activity-row"><strong>Notice scheduled</strong><div class="small">A. Singh · 17 Oct 2026 · Publication time set</div></div></article>
+            </section>
+            <section class="card" style="margin-top:1rem" aria-labelledby="quick-actions"><div class="section-title"><h2 id="quick-actions">Quick actions</h2></div><div class="admin-actions"><a class="button" href="#new-notice">Create a notice</a><a class="button button-secondary" href="#bulk-documents">Upload documents</a><a class="button button-secondary" href="#support-queue">Review pending support</a></div></section>
+            <p class="approval-note" style="margin-top:1rem"><strong>Review notes:</strong> Values are illustrative; production counts are permission-scoped and blank states appear when a module has no records.</p>
+        </main>
+    </div>
+</body>
+</html>
